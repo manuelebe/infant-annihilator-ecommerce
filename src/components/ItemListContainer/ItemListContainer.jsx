@@ -1,6 +1,16 @@
-const ItemListContainer = ( {saludo} ) =>{
+import React from 'react'
+import ItemList from "./ItemList"
+import "./itemListContainer.css"
+import HocFilterProducts from '../../hoc/HocFilterProducts'
+
+const ItemListContainer = ({products}) =>{
     return (
-        <h2>{saludo}</h2>
+        <div className="itemListContainer">
+            <ItemList products={products}/>
+        </div>
     )
 }
-export default ItemListContainer
+
+const ItemListContainerWithHoc = HocFilterProducts(ItemListContainer)
+
+export default ItemListContainerWithHoc

@@ -1,6 +1,6 @@
 import React from 'react'
 import "./background.css"
-import Tboy from "../../assets/background_tboy.webp"
+import Tboy from "/img/background_tboy.webp"
 
 const Background = ({tboy}) => {
   return (

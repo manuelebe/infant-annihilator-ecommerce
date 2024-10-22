@@ -1,0 +1,37 @@
+.itemListContainer{
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+    .itemList{
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        flex-wrap: wrap;
+        width: 80%;
+        .item{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            background-color: #090807;
+            padding: 10px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-bottom: 25px;
+            border: 1px solid white;
+            box-shadow: 0px 0px 20px 7px rgba(0,0,0,0.75);
+            .itemImg{
+                width: 170px;
+                margin-bottom: 7px;
+            }
+            .itemText{
+                text-align: center;
+                font-size: 1rem;
+                overflow-wrap: break-word;
+            }
+        }
+    }
+}

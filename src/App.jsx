@@ -1,16 +1,23 @@
+import React from 'react'
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 import NavBar from "./components/NavBar/NavBar"
 import './App.css'
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
-import Contador from "./components/ItemListContainer/Contador"
+import ItemListContainerWithHoc from "./components/ItemListContainer/ItemListContainer"
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
 import Background from "./components/Background/Background"
 
 function App() {
   return (
     <div>
-      <Background/>
-      <NavBar/>
-      <ItemListContainer saludo={"Hola Mundo!"}/>
-      <Contador/>
+      <BrowserRouter>
+        <Background/>
+        <NavBar/>
+        <Routes>
+          <Route path="/" element={<ItemListContainerWithHoc/>}/>
+          <Route path="/category/:idCategory" element={<ItemListContainerWithHoc/>}/>
+          <Route path="/detail/:idProduct" element={<ItemDetailContainer/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
