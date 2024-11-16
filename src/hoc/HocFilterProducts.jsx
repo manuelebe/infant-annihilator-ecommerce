@@ -24,8 +24,8 @@ const HocFilterProducts = (Component) => {
             {
                 loading === true ? <Loading/> : 
                 <>
-                    <div>
-                        <input type="text" placeholder="Buscar productos" onChange={changeInput}/>
+                    <div className="searchContainer">
+                        <input type="text" placeholder="Buscar productos" onChange={changeInput} name="searchInput" className="searchInput"/>
                     </div>
                     <Component products={search()}/>
                 </>

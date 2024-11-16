@@ -7,7 +7,11 @@
   line-height: 1.5;
 }
 body{
+  height: 100%;
   background-color: black;
+  background-image: url("/img/background_tboy.webp");
+  background-repeat: no-repeat;
+  background-size: 100%;
   h2, p{
     color: white;
     font-size: 2rem;

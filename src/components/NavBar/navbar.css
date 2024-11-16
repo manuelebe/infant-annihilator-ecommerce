@@ -22,6 +22,7 @@
             .cartWidget{
                 display: flex;
                 align-items:center;
+                text-decoration: none;
                 .iconCart{
                     margin-right: 5px;
                     width: 25px;

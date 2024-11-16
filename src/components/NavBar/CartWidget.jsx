@@ -1,12 +1,16 @@
-import React from 'react'
+import { React, useContext } from 'react'
 import IconCart from "/img/cart_icon.webp"
+import { CartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
 
 const CartWidget = () => {
+    const {totalQuantity} = useContext(CartContext)
+    const quantity = totalQuantity()
   return (
-    <div className="cartWidget">
+    <Link to="/cart" className="cartWidget">
         <img src={IconCart} alt="Carrito de compras" className="iconCart"/>
-        <h4 className="navText">1</h4>
-    </div>
+        <h4 className="navText">{quantity >= 1 && quantity}</h4>
+    </Link>
   )
 }
 
