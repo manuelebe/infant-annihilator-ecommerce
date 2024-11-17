@@ -7,7 +7,9 @@ import { CartProvider } from './context/CartContext'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
 import Footer from './components/Footer/Footer'
+import { ToastContainer } from "react-toastify"
 import './App.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
       <BrowserRouter>
         <CartProvider>
           <NavBar/>
+          <ToastContainer/>
           <Routes>
             <Route path="/" element={<ItemListContainerWithHoc/>}/>
             <Route path="/category/:idCategory" element={<ItemListContainerWithHoc/>}/>

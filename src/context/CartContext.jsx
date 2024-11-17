@@ -1,4 +1,5 @@
 import { React, createContext, useState, useEffect } from "react"
+import { toast } from "react-toastify"
 
 const CartContext = createContext()
 
@@ -16,15 +17,19 @@ const CartProvider = ({children}) =>{
             const findIndex = tempCart.findIndex((productCart) => productCart.id === newProduct.id)
             tempCart[findIndex].quantity = tempCart[findIndex].quantity + newProduct.quantity
             if(tempCart[findIndex].quantity <= tempCart[findIndex].stock){
-                setCart(tempCart)  
+                setCart(tempCart)
             } else{
                 tempCart[findIndex].quantity = tempCart[findIndex].quantity - newProduct.quantity
-                console.log("¡No hay suficiente stock!")
+                toast.error("¡No hay suficiente stock!")
             }
             localStorage.cart = JSON.stringify(cart)
         } else{
-            setCart([...cart, newProduct])
-            localStorage.cart = JSON.stringify([...cart, newProduct])
+            if(newProduct.stock === 0){
+                toast.error("¡No hay suficiente stock!")
+            } else{
+                setCart([...cart, newProduct])
+                localStorage.cart = JSON.stringify([...cart, newProduct])
+            }
         }
     }
 

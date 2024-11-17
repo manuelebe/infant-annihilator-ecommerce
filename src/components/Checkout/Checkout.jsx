@@ -5,6 +5,7 @@ import { Timestamp, addDoc, setDoc, doc, collection, } from 'firebase/firestore'
 import db from '../../db/db'
 import { Link } from 'react-router-dom'
 import validateForm from '../../utils/validateForm'
+import { toast } from 'react-toastify'
 import "./checkout.css"
 
 const Checkout = () => {
@@ -33,9 +34,10 @@ const Checkout = () => {
     try{
       const response = await validateForm(dataForm)
       if(response.status === "error") throw new Error(response.message)
+      toast.success("Subiendo orden...")
       uploadOrder(order)
     } catch(error){
-      console.log(error.message)
+      toast.error(error.message)
     }
   }
   
