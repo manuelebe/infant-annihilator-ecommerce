@@ -36,3 +36,30 @@
         }
     }
 }
+
+@media screen and (max-width: 1000px){
+    .itemListContainer{
+        padding: 10px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        .itemList{
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 550px){
+    .itemListContainer{
+        .itemList{
+            .item{
+                width: 130px;
+                .itemImg{
+                    width: 100px;
+                }
+                .itemText{
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}

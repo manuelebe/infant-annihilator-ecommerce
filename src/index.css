@@ -11,7 +11,8 @@ body{
   background-color: black;
   background-image: url("/img/background_tboy.webp");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-attachment: scroll;
+  background-position: center top;
   h2, p{
     color: white;
     font-size: 2rem;

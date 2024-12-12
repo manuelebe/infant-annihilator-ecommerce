@@ -17,7 +17,7 @@ const Cart = () => {
     if(cart.length === 0){
         return(
             <div className="emptyCartContainer">
-                <h2 color="emptyCartTitle">No hay productos en el carrito</h2>
+                <h2 className="emptyCartTitle">No hay productos en el carrito</h2>
                 <Link to="/" className="emptyCartLink">Seguir comprando</Link>
             </div>
         )
@@ -28,22 +28,28 @@ const Cart = () => {
             {
                 cart.map((productCart) =>(
                     <div key={productCart.id} className="productContainer">
-                        <img src={productCart.src} alt="Producto" className="cartImg"/>
-                        <div className="sectionDiv">
-                            <p className="cartText">{productCart.name}</p>
+                        <div className="cartImgSection">
+                            <img src={productCart.src} alt="Producto" className="cartImg"/>
+                            <div className="sectionDiv">
+                                <p className="cartText">{productCart.name}</p>
+                            </div> 
                         </div>
-                        <div className="sectionDiv">
-                            <p className="cartTitle">Precio c/u</p>
-                            <p className="cartText">${productCart.price}</p>
+                        <hr className="itemDetailLine"/>
+                        <div className="cartDetailSection">
+                            <div className="sectionDiv">
+                                <p className="cartTitle">Precio c/u</p>
+                                <p className="cartText">${productCart.price}</p>
+                            </div>
+                            <div className="sectionDiv">
+                                <p className="cartTitle">Cantidad:</p>
+                                <p className="cartText">{productCart.quantity}</p>
+                            </div>
+                            <div className="sectionDiv">
+                                <p className="cartTitle">Total</p>
+                                <p className="cartText">${productCart.price * productCart.quantity}</p>
+                            </div> 
                         </div>
-                        <div className="sectionDiv">
-                            <p className="cartTitle">Cantidad:</p>
-                            <p className="cartText">{productCart.quantity}</p>
-                        </div>
-                        <div className="sectionDiv">
-                            <p className="cartTitle">Total</p>
-                            <p className="cartText">${productCart.price * productCart.quantity}</p>
-                        </div>
+                        <hr className="itemDetailLine"/>
                         <button onClick={() => deleteProductById(productCart.id)} className="deleteButton">
                             <img src="/img/trash.webp" className="deleteIcon"/>
                         </button>

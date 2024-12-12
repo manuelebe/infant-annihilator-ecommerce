@@ -1,10 +1,11 @@
 .formContainer{
-    width: 30%;
+    width: 400px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+    margin-bottom: 500px;
     background-color: #090807;
     padding: 50px;
     border: 1px solid white;
@@ -33,7 +34,7 @@
 }
 .orderContainer{
     display: flex;
-    width: 70%;
+    width: 70vw;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
@@ -74,27 +75,108 @@
         margin-top: 5px;
         margin-bottom: 5px;
         padding: 30px;
-    }
-    .orderImg{
-        width: 100px;
-    }
-    .sectionDiv{
-        width: 150px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .orderTitle{
-            color: #c9c9c9;
-            font-size: 1.2rem;
+        .orderImgSection{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 50%;
+            .orderImg{
+                width: 100px;
+            }
+            .sectionDiv{
+                width: 150px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .orderText{
+                    color: #ffffff;
+                    font-size: 1.5rem;
+                }  
+            }
         }
-        .orderText{
-            color: #ffffff;
-            font-size: 1.5rem;
-        }  
+        .itemDetailLine{
+            display: none;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .orderDetailSection{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 50%;
+            .sectionDiv{
+                width: 150px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .orderText{
+                    color: #ffffff;
+                    font-size: 1.5rem;
+                }  
+                .orderTitle{
+                    color: #c9c9c9;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        
     }
     .orderTitle{
         color: #c9c9c9;
         font-size: 1.5rem;
         margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .orderContainer{
+        width: 90vw;
+        text-align: center;
+    }
+    .orderProductContainer{
+        width: 90vw;
+        .productContainer{
+            width: 90vw;
+            flex-direction: column;
+            align-items: baseline;
+            .orderImgSection{
+                width: 400px;
+                align-items: center;
+                .orderImg{
+                    width: 90px;
+                    margin-right: 20px;
+                }
+                .sectionDiv{
+                    width: 390px;
+                }
+            }
+            .itemDetailLine{
+                display: block;
+            }
+            .orderDetailSection{
+                margin: 0 auto;
+                justify-content: space-evenly;
+                width: 100%;
+                .sectionDiv{
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+    .formContainer{
+        width: 300px;
+        margin-bottom: 200px;
+    }
+    .orderProductContainer{
+        .productContainer{
+            .orderImgSection{
+                width: 300px;
+            }
+        }
     }
 }

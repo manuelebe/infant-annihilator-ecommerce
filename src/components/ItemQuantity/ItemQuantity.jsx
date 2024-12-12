@@ -14,20 +14,15 @@ const ItemQuantity = ({stock, addProduct}) => {
             setQuantity(quantity + 1)
         }
     }
-    const handleMouseDownButton = (button) =>{
-        setMouseDownButton(button)
-    }
-    const handleMouseUpButton = () =>{
-        setMouseDownButton(0)
-    }
+
   return (
     <>
         <p className="textDetail">{quantity}</p>
         <div className="quantityButtonContainer">
-            <button onClick={handleClickAddition} onMouseDown={() => handleMouseDownButton(1)} onMouseUp={handleMouseUpButton} className={mouseDownButton === 1 ? "mouseDownButton" : "quantityButton"}>+</button>
-            <button onClick={handleClickSubtraction} onMouseDown={() => handleMouseDownButton(2)} onMouseUp={handleMouseUpButton} className={mouseDownButton === 2 ? "mouseDownButton" : "quantityButton"}>-</button>
+            <button onClick={handleClickAddition} onMouseDown={() => setMouseDownButton(1)} onMouseUp={() => setMouseDownButton(0)} className={mouseDownButton === 1 ? "mouseDownButton" : "quantityButton"}>+</button>
+            <button onClick={handleClickSubtraction} onMouseDown={() => setMouseDownButton(2)} onMouseUp={() => setMouseDownButton(0)} className={mouseDownButton === 2 ? "mouseDownButton" : "quantityButton"}>-</button>
         </div>
-        <button onClick={() => addProduct(quantity)} onMouseDown={() => handleMouseDownButton(3)} onMouseUp={handleMouseUpButton} className={mouseDownButton === 3 ? "mouseDownAddButton" : "addButton"}>Agregar al carrito</button>
+        <button onClick={() => addProduct(quantity)} onMouseDown={() => setMouseDownButton(3)} onMouseUp={() => setMouseDownButton(0)} className={mouseDownButton === 3 ? "mouseDownAddButton" : "addButton"}>Agregar al carrito</button>
     </>
   )
 }

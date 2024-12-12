@@ -2,7 +2,7 @@ import React from 'react'
 
 const FormCheckout = ({dataForm, handleChangeInput, handleSubmitForm}) => {
   return (
-    <div>
+    <>
         <form onSubmit={handleSubmitForm} className="formContainer">
             <h2 className="formTitle">Checkout</h2>
             
@@ -17,7 +17,7 @@ const FormCheckout = ({dataForm, handleChangeInput, handleSubmitForm}) => {
 
             <button type="submit" className="formSubmit">Enviar mi orden</button>
         </form>
-    </div>
+    </>
   )
 }
 

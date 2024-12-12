@@ -69,7 +69,7 @@ const Checkout = () => {
 }, [])
 
   return (
-    <div>
+    <>
       {
         idOrder === null ? (
           <FormCheckout dataForm={dataForm} handleChangeInput={handleChangeInput} handleSubmitForm={handleSubmitForm}/>
@@ -84,10 +84,14 @@ const Checkout = () => {
               {
                 cartCopy.map((orderProduct) =>(
                   <div key={orderProduct.id} className="productContainer">
+                    <div className="orderImgSection">
                       <img src={orderProduct.src} alt="Producto" className="orderImg"/>
                       <div className="sectionDiv">
                           <p className="orderText">{orderProduct.name}</p>
                       </div>
+                    </div>
+                    <hr className="itemDetailLine"/>
+                    <div className="orderDetailSection">
                       <div className="sectionDiv">
                           <p className="orderTitle">Cantidad:</p>
                           <p className="orderText">{orderProduct.quantity}</p>
@@ -96,6 +100,8 @@ const Checkout = () => {
                           <p className="orderTitle">Precio total</p>
                           <p className="orderText">${orderProduct.price * orderProduct.quantity}</p>
                       </div>
+                    </div>
+                    <hr className="itemDetailLine"/>
                   </div>
                 ))
               }
@@ -104,7 +110,7 @@ const Checkout = () => {
           </>
         )
       }
-    </div>
+    </>
   )
 }
 
